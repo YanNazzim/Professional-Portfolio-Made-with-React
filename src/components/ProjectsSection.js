@@ -19,24 +19,37 @@ const projects = [
     projectUrl: "https://github.com/YanNazzim/Time_Clock",
   },
   {
-    title: "Photo Gallery",
+    title: "React Calculator Web-App",
     description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
-    getImageSrc: () => require("../images/photo3.jpg"),
-    projectUrl: "https://github.com/YanNazzim/Calculator-App-React-Lab"
+      "A React-based calculator app designed for quick and efficient calculations. It's user-friendly, with a simple interface for basic arithmetic operations. The app provides a responsive and smooth user experience, making number crunching a breeze.",
+    getImageSrc: () => require("../images/react-calculator.png"),
+    projectUrl: "https://github.com/YanNazzim/Calculator-App-React-Lab",
   },
   {
-    title: "Event planner",
+    title: "Shopplet Android App",
     description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
-    getImageSrc: () => require("../images/photo4.jpg"),
+      "Marketplace app for local services and unique items, global reach, direct communication, cost-efficient. Positioned against template-based platforms, enabling buying and selling with a focus on personalized experiences and financial prudence.",
+    getImageSrc: () => require("../images/shopplet.jpg"),
+    projectUrl: "https://github.com/YanNazzim/Shopplet-Android-App"
+  },  {
+    title: "Toggle Light/Dark Theme React App",
+    description:
+      "Practice React web app featuring a toggleable light and dark theme for a personalized visual experience.",
+    getImageSrc: () => require("../images/toggle-light.png"),
+    projectUrl: "https://github.com/YanNazzim/Toggle-Dark-and-Light-Theme-React-Lab"
+  },  {
+    title: "Track Cursor Position React App (SEO)",
+    description:
+      "SEO-optimized React app for tracking cursor positions. Enhances user experience by providing valuable insights into cursor movements, aiding in website optimization strategies.",
+    getImageSrc: () => require("../images/mouse-cursor.jpg"),
+    projectUrl: "https://github.com/YanNazzim/Tracking-Cursor-Position-React-Lab"
   },
 ];
 
 const ProjectsSection = () => {
   return (
     <FullScreenSection
-      backgroundColor="#14532d"
+      backgroundColor="#154a46"
       isDarkBackground
       p={8}
       alignItems="flex-start"

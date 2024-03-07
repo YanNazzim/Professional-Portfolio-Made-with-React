@@ -1,5 +1,4 @@
-// ContactMe.js
-
+// Import statements...
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -37,32 +36,31 @@ const ContactMe = () => {
       type: "",
       comment: "",
     },
-    onSubmit: (values) => {
-      submit(values)
-        .then((response) => {
-          if (response.type === "success") {
-            onOpen({
-              title: "Success!",
-              description: `Thank you, ${values.firstName}! Your message has been submitted successfully.`,
-              status: "success",
-            });
-            formik.resetForm();
-          } else {
-            onOpen({
-              title: "Error!",
-              description: `Oops! Something went wrong. Please try again later.`,
-              status: "error",
-            });
-          }
-        })
-        .catch((error) => {
-          console.error("Error submitting form:", error);
+    onSubmit: async (values) => {
+      try {
+        await submit("your-api-endpoint", values); // Replace "your-api-endpoint" with your actual API endpoint
+        if (response.type === "success") {
+          onOpen({
+            title: "Success!",
+            description: response.message,
+            status: "success",
+          });
+          formik.resetForm();
+        } else {
           onOpen({
             title: "Error!",
-            description: `Oops! Something went wrong. Please try again later.`,
+            description: response.message,
             status: "error",
           });
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        onOpen({
+          title: "Error!",
+          description: "Oops! Something went wrong. Please try again later.",
+          status: "error",
         });
+      }
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"),
@@ -73,7 +71,7 @@ const ContactMe = () => {
   });
 
   return (
-    <FullScreenSection isDarkBackground backgroundColor="#512DA8" py={16} spacing={8}>
+    <FullScreenSection isDarkBackground backgroundColor="#15334a" py={16} spacing={8}>
       <VStack w="1024px" p={32} alignItems="flex-start">
         <Heading as="h1" id="contactme-section">
           Contact me
@@ -137,11 +135,16 @@ const ContactMe = () => {
             </VStack>
           </form>
         </Box>
-
       </VStack>
-        <Button style={{width: "75%", backgroundColor: "black"}} onClick={scrollToTop} colorScheme="purple" width="full" mt={8}>
-  Back to Top
-</Button>
+      <Button
+        style={{ width: "75%", backgroundColor: "black" }}
+        onClick={scrollToTop}
+        colorScheme="purple"
+        width="full"
+        mt={8}
+      >
+        Back to Top
+      </Button>
     </FullScreenSection>
   );
 };
