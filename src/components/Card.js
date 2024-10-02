@@ -31,7 +31,7 @@ const Card = ({ title, description, imageSrc, projectUrl }) => {
         <Text color="black">{description}</Text>
       </VStack>
       <HStack justifyContent="space-between" w="100%" align="flex-end">
-        <Text color="teal.500">Read More</Text>
+        <Text color="teal.500">Go To Project</Text>
         {projectUrl && (
           <Link href={projectUrl} isExternal>
             <FontAwesomeIcon icon={faArrowRight} size="1x" color="black" />

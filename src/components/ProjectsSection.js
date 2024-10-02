@@ -32,11 +32,11 @@ const projects = [
     getImageSrc: () => require("../images/shopplet.jpg"),
     projectUrl: "https://github.com/YanNazzim/Shopplet-Android-App"
   },  {
-    title: "Toggle Light/Dark Theme React App",
+    title: "Sargent Templates Tool (EZ Mode)",
     description:
-      "Practice React web app featuring a toggleable light and dark theme for a personalized visual experience.",
-    getImageSrc: () => require("../images/toggle-light.png"),
-    projectUrl: "https://github.com/YanNazzim/Toggle-Dark-and-Light-Theme-React-Lab"
+      "The Sargent Template Tool is a web app designed to streamline and simplify the search for product templates, making product documentation quick and hassle-free.",
+    getImageSrc: () => require("../images/productDocs.png"),
+    projectUrl: "https://sargent-templates.netlify.app"
   },  {
     title: "Track Cursor Position React App (SEO)",
     description:
